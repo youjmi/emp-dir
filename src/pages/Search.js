@@ -8,9 +8,7 @@ import Alert from "../components/Alert";
 class Search extends Component {
   state = {
     search: "",
-    breeds: [],
     results: [],
-    error: ""
   };
 
   // // When the component mounts, get a list of all available base breeds and update this.state.breeds
@@ -21,13 +19,31 @@ class Search extends Component {
   // }
 
   // handleInputChange = event => {
-  //   this.setState({ search: event.target.value });
+  //   this.setState({ search: event.target.value });3
   // };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   this.setState(this.state.search);
-  // }
+
+componentDidMount() {
+  API.search()
+  .then(res => this.setState({results: res.data}))
+  .catch(err =>console.log(err))
+}
+
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.search(this.state.search)
+    .then(res => {
+      if (res.data.status === "error") {
+        throw new Error(res.data.message);
+      }
+      this.setState({ results: res.data.message, error: "" });
+    })
+    .catch(err => this.setState({ error: err.message }));
+  }
     
   render() {
     return (
