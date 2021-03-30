@@ -4,17 +4,17 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 
-function About() {
+function Home() {
   return (
     <div>
-      <Hero backgroundImage="https://i.imgur.com/qkdpN.jpg">
-        <h1>Pupster</h1>
-        <h2>They're the Good Boys and Girls</h2>
+      <Hero backgroundImage="https://www.affordablebackgroundchecks.com/blog/wp-content/uploads/2019/03/Employee-Personal-Details-Check.jpg">
+        <h1>Welcome to Eddy!</h1>
+        <h2>Your personal Employee Designated Directory!</h2>
       </Hero>
       <Container style={{ marginTop: 30 }}>
         <Row>
           <Col size="md-12">
-            <h1>Welcome To Pupster!</h1>
+            <h1>Meet Eddy!</h1>
           </Col>
         </Row>
         <Row>
@@ -61,4 +61,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
