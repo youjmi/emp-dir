@@ -48,7 +48,7 @@ componentDidMount() {
   render() {
     return (
       <div>
-        <Container style={{ minHeight: "80%" }}>
+        <Container style={{ minHeight: "80%", maxWidth: "80%"}}>
           <h1 className="text-center">Search an Employee!</h1>
           <SearchForm
             // handleFormSubmit={this.handleFormSubmit}
