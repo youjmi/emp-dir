@@ -3,12 +3,12 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
-import Alert from "../components/Alert";
 
 class Search extends Component {
   state = {
     search: "",
-    results: [],
+    employee: [],
+    error: ""
   };
 
   // // When the component mounts, get a list of all available base breeds and update this.state.breeds
@@ -24,8 +24,8 @@ class Search extends Component {
 
 
 componentDidMount() {
-  API.search()
-  .then(res => this.setState({results: res.data}))
+  API.searchEmployee()
+  .then(res => this.setState({employee: res.data.results}))
   .catch(err =>console.log(err))
 }
 
@@ -35,14 +35,14 @@ componentDidMount() {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.search(this.state.search)
+    API.searchEmployee(this.state.search)
     .then(res => {
       if (res.data.status === "error") {
-        throw new Error(res.data.message);
+        throw new Error(res.data.results);
       }
-      this.setState({ results: res.data.message, error: "" });
+      this.setState({ employee: res.data.results, error: "" });
     })
-    .catch(err => this.setState({ error: err.message }));
+    .catch(err => this.setState({ error: err.results }));
   }
     
   render() {
@@ -50,18 +50,12 @@ componentDidMount() {
       <div>
         <Container style={{ minHeight: "80%" }}>
           <h1 className="text-center">Search an Employee!</h1>
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-          >
-            {this.state.error}
-          </Alert>
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
+            employee={this.state.employee}
           />
-          <SearchResults results={this.state.results} />
+          <SearchResults results={this.state.employee} />
         </Container>
       </div>
     );

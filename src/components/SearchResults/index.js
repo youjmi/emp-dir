@@ -3,13 +3,50 @@ import "./style.css";
 
 function SearchResults(props) {
   return (
-    <ul className="list-group search-results">
-      {/* {props.results.map(result => (
-        <li key={result} className="list-group-item">
-          <img alt="Dog" src={result} className="img-fluid" />
-        </li>
-      ))} */}
-    </ul>
+    // <div>
+    // <ul className="list-group search-results">
+    //   {props.results.map(result => (
+    //     <li key={result} className="list-group-item">
+    //       <img alt="" src={result} className="img-fluid" />
+    //     </li>
+    //   ))}
+    // </ul>
+    // </div>
+
+    <div className="list-group search-results">
+      <table className="table">
+        <caption>Searched Employees</caption>
+        <thread>
+          <tr>
+            <th>Profile Picture</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Cell Phone</th>
+            <th>Main Phone</th>
+            <th>Gender</th>
+          </tr>
+        </thread>
+        <tbody>
+          {props.results.map(message => (
+            <tr>
+              <td><img alt ="profilePic" src ={message.picture.thumbnail} className="img-fluid"/> </td>
+              <td><p>{message.name.first}</p></td>
+              <td><p>{message.name.last}</p></td>
+              <td><p>{message.email}</p></td>
+              <td><p>{message.location.state}</p></td>
+              <td><p>{message.location.country}</p></td>
+              <td><p>{message.phone.cell}</p></td>
+              <td><p>{message.phone.main}</p></td>
+              <td><p>{message.gender}</p></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+    </div>
   );
 }
 
