@@ -38,8 +38,8 @@ function SearchResults(props) {
               <td >{message.email}</td>
               <td>{message.location.state}</td>
               <td>{message.location.country}</td>
-              <td>{message.phone.cell}</td>
-              <td>{message.phone.main}</td>
+              <td>{message.cell}</td>
+              <td>{message.phone}</td>
               <td>{message.gender}</td>
             </tr>
           ))}
