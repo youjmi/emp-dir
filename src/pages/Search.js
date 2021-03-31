@@ -51,11 +51,20 @@ componentDidMount() {
         <Container style={{ minHeight: "80%" }}>
           <h1 className="text-center">Search an Employee!</h1>
           <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
+            // handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             employee={this.state.employee}
           />
-          <SearchResults results={this.state.employee} />
+          {this.state.employee ?(
+
+          <SearchResults 
+        
+          results={this.state.employee} 
+          
+          />
+          ) : (
+            <h3> No Results to Display</h3>
+          )}
         </Container>
       </div>
     );

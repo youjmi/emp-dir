@@ -18,8 +18,8 @@ function SearchResults(props) {
         <caption>Searched Employees</caption>
         <thread>
           <tr>
-            <th>Profile Picture</th>
-            <th>First Name</th>
+            <th >Profile Picture</th>
+            <th >First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>State</th>
@@ -33,14 +33,14 @@ function SearchResults(props) {
           {props.results.map(message => (
             <tr>
               <td><img alt ="profilePic" src ={message.picture.thumbnail} className="img-fluid"/> </td>
-              <td><p>{message.name.first}</p></td>
-              <td><p>{message.name.last}</p></td>
-              <td><p>{message.email}</p></td>
-              <td><p>{message.location.state}</p></td>
-              <td><p>{message.location.country}</p></td>
-              <td><p>{message.phone.cell}</p></td>
-              <td><p>{message.phone.main}</p></td>
-              <td><p>{message.gender}</p></td>
+              <td >{message.name.first}</td>
+              <td >{message.name.last}</td>
+              <td >{message.email}</td>
+              <td>{message.location.state}</td>
+              <td>{message.location.country}</td>
+              <td>{message.phone.cell}</td>
+              <td>{message.phone.main}</td>
+              <td>{message.gender}</td>
             </tr>
           ))}
         </tbody>
