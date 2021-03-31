@@ -16,7 +16,7 @@ function SearchResults(props) {
     <div className="list-group search-results">
       <table className="table">
         <caption>Searched Employees</caption>
-        <thread>
+        <thead>
           <tr>
             <th >Profile Picture</th>
             <th >First Name</th>
@@ -28,7 +28,7 @@ function SearchResults(props) {
             <th>Main Phone</th>
             <th>Gender</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
           {props.results.map(message => (
             <tr>
