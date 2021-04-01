@@ -3,9 +3,7 @@ import "./style.css";
 import {Table} from 'reactstrap'
 
 function SearchResults(props) {
-  return (
-
-
+return (
       <Table dark hover bordered responsive className="table">
         <caption>Searched Employees</caption>
         <thead>
@@ -21,6 +19,7 @@ function SearchResults(props) {
             <th>Gender</th>
           </tr>
         </thead>
+        
         <tbody>
           {props.results.map(message => (
             <tr>
@@ -36,6 +35,7 @@ function SearchResults(props) {
             </tr>
           ))}
         </tbody>
+        
       </Table>
   );
 }

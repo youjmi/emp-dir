@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, InputGroup } from "reactstrap";
+import { InputGroup } from "reactstrap";
 import "./style.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array

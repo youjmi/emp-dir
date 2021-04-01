@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASEURL = "https://randomuser.me/api/?results=300";
+const BASEURL = "https://randomuser.me/api/?results=50";
 
 
 // eslint-disable-next-line 
