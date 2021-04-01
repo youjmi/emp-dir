@@ -9,15 +9,14 @@ return (
         <thead>
           <tr>
             <th >Profile Picture</th>
-            <th >First Name<button type="button" onClick={() => props.sortList("first")}></button>
-</th>
-            <th>Last Name<button type="button" onClick={() => props.sortList("last")}></button></th>
-            <th>Email<button type="button" onClick={() => props.sortList("email")}></button></th>
-            <th>City <button type="button" onClick={() => props.sortList("city")}></button></th>
-            <th>Country<button type="button" onClick={() => props.sortList("country")}></button></th>
-            <th>Cell Phone<button type="button" onClick={() => props.sortList("cell")}></button></th>
-            <th>Main Phone<button type="button" onClick={() => props.sortList("phone")}></button></th>
-            <th>Gender<button type="button" onClick={() => props.sortList("gender")}></button></th>
+            <th ><span onClick={() => props.sortList("first")}>First Name</span></th>
+            <th><span onClick={() => props.sortList("last")}>Last Name</span></th>
+            <th><span onClick={() => props.sortList("email")}>Email</span></th>
+            <th><span onClick={() => props.sortList("city")}>City</span></th>
+            <th><span onClick={() => props.sortList("country")}>Country</span></th>
+            <th><span onClick={() => props.sortList("cell")}>Cell Phone</span></th>
+            <th><span onClick={() => props.sortList("phone")}>Main Phone</span></th>
+            <th><span onClick={() => props.sortList("gender")}>Gender</span></th>
           </tr>
         </thead>
         
