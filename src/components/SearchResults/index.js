@@ -9,20 +9,21 @@ return (
         <thead>
           <tr>
             <th >Profile Picture</th>
-            <th >First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Cell Phone</th>
-            <th>Main Phone</th>
-            <th>Gender</th>
+            <th >First Name<button type="button" onClick={() => props.sortList("first")}></button>
+</th>
+            <th>Last Name<button type="button" onClick={() => props.sortList("last")}></button></th>
+            <th>Email<button type="button" onClick={() => props.sortList("email")}></button></th>
+            <th>City <button type="button" onClick={() => props.sortList("city")}></button></th>
+            <th>Country<button type="button" onClick={() => props.sortList("country")}></button></th>
+            <th>Cell Phone<button type="button" onClick={() => props.sortList("cell")}></button></th>
+            <th>Main Phone<button type="button" onClick={() => props.sortList("phone")}></button></th>
+            <th>Gender<button type="button" onClick={() => props.sortList("gender")}></button></th>
           </tr>
         </thead>
         
         <tbody>
           {props.results.map(message => (
-            <tr>
+            <tr key= {message.id}>
               <td><img alt ="profilePic" src ={message.picture.large} className="img-fluid"/> </td>
               <td >{message.name.first}</td>
               <td >{message.name.last}</td>
