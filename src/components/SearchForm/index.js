@@ -10,17 +10,15 @@ function SearchForm(props) {
         {/* <label htmlFor="employeename"></label> */}
         <InputGroup>
         <input
-          value={props.results}
+          value={props.search}
           onChange={props.handleInputChange}
           name="employeeName"
           list="employee"
           type="text"
           className="form-control"
           placeholder="Type Here"
-
-          // id="breed"
-          
         />
+       
         
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
