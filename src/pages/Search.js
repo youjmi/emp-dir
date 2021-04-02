@@ -65,13 +65,14 @@ class Search extends Component {
         ||(message.phone.toLowerCase().indexOf(filter) !==-1)
         ||(message.gender.toLowerCase().indexOf(filter) !==-1)
 
-
+        
 
 
     
       })
       //rerender--update state. 
       this.setState({filteredSearch:filteredList})
+      console.log(filter)
     }
     else{
       this.setState({filteredSearch: this.state.employee})
