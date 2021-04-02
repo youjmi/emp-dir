@@ -1,28 +1,28 @@
 import React from "react";
 import "./style.css";
-import {Table} from 'reactstrap'
+import {Table,Button} from 'reactstrap'
 
 function SearchResults(props) {
 return (
-      <Table dark hover bordered responsive className="table">
+      <Table  hover bordered responsive className="table">
         <caption>Searched Employees</caption>
         <thead>
           <tr>
             <th >Profile Picture</th>
-            <th ><span onClick={() => props.sortList("first")}>First Name</span></th>
-            <th><span onClick={() => props.sortList("last")}>Last Name</span></th>
-            <th><span onClick={() => props.sortList("email")}>Email</span></th>
-            <th><span onClick={() => props.sortList("city")}>City</span></th>
-            <th><span onClick={() => props.sortList("country")}>Country</span></th>
-            <th><span onClick={() => props.sortList("cell")}>Cell Phone</span></th>
-            <th><span onClick={() => props.sortList("phone")}>Main Phone</span></th>
-            <th><span onClick={() => props.sortList("gender")}>Gender</span></th>
+            <th ><Button color ="link" onClick={() => props.sortList("first")}>First Name</Button></th>
+            <th><Button color ="link" onClick={() => props.sortList("last")}>Last Name</Button></th>
+            <th><Button color = "link" onClick={() => props.sortList("email")}>Email</Button></th>
+            <th><Button color = "link" onClick={() => props.sortList("city")}>City</Button></th>
+            <th><Button color = "link" onClick={() => props.sortList("country")}>Country</Button></th>
+            <th><Button color = "link"onClick={() => props.sortList("cell")}>Cell Phone</Button></th>
+            <th><Button color = "link" onClick={() => props.sortList("phone")}>Main Phone</Button></th>
+            <th><Button color = "link" onClick={() => props.sortList("gender")}>Gender</Button></th>
           </tr>
         </thead>
         
         <tbody>
           {props.results.map(message => (
-            <tr key= {message.id}>
+            <tr key= {message.cell}>
               <td><img alt ="profilePic" src ={message.picture.large} className="img-fluid"/> </td>
               <td >{message.name.first}</td>
               <td >{message.name.last}</td>

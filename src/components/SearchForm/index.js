@@ -22,8 +22,8 @@ function SearchForm(props) {
 
         />
       
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-          Clear
+        <button type="button" onClick={props.handleFormSubmit} className="btn btn-success">
+          Refresh
         </button>
         </InputGroup>
       </div>
