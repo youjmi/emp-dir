@@ -18,6 +18,8 @@ Welcome to Eddy, the Employee Designated Directory! I have created a employee di
 Eddy is very user friendly. The user is able to type any existing property and the search individual will show up immediately. The user is also able to sort through in an ascended fashion by clicking on the top of each column.
 
 
+Deployed Link: https://youjmi.github.io/emp-dir/
+
 ## Installation
 
 To begin, I had to install my dependencies that are to be utlizied :
