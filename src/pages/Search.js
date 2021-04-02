@@ -176,7 +176,7 @@ class Search extends Component {
 
     return (
       <div>
-        <Container style={{ maxWidth: "95%", marginTop: "5%" }}>
+        <Container style={{ maxWidth: "95%", marginTop: "5%", }}>
           <h1 className="text-center">Search for Eddy!</h1>
           <br></br>
           <br></br>

@@ -11,7 +11,7 @@ function Home() {
         <h1>Welcome to Eddy!</h1>
         <h2>Your personal Employee Designated Directory!</h2>
       </Hero>
-      <Container style={{ marginTop: 40 }}>
+      <Container style={{ marginTop: 40 ,}}>
         <Row>
           <Col size="md-12">
             <h1 className ="text-center" >Meet Eddy!</h1>

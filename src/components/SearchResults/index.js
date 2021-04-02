@@ -4,7 +4,8 @@ import {Table,Button} from 'reactstrap'
 
 function SearchResults(props) {
 return (
-      <Table  hover bordered responsive className="table">
+
+      <Table  striped hover bordered responsive className="table">
         <caption>Searched Employees</caption>
         <thead>
           <tr>
