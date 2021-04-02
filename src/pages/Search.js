@@ -4,6 +4,8 @@ import Container from "../components/Container/index";
 import SearchForm from "../components/SearchForm/index";
 import SearchResults from "../components/SearchResults/index";
 
+
+//Search Page info...//
 class Search extends Component {
 
   
@@ -25,7 +27,7 @@ class Search extends Component {
 
   // }
 
-
+//Hook invoking API Search Employee immediately
   componentDidMount() {
     API.searchEmployee()
       .then(res => this.setState({ 
@@ -34,7 +36,12 @@ class Search extends Component {
       .catch(err => console.log(err))
   }
 
+
+  //HandleInputChange This runs on every letter typed. 
+
   handleInputChange = event => {
+
+
     // this.setState({ search: event.target.value })
     // const filter = event.target.value
     // console.log(filter)
@@ -44,6 +51,8 @@ class Search extends Component {
     // });
     // this.setState({employee: filteredList})
 
+
+    //If Else statement to filter through the cells. 
     if (event) {
       let filter = (event.target.value).toLowerCase()
       const filteredList = this.state.employee.filter(message => {
@@ -61,7 +70,7 @@ class Search extends Component {
 
     
       })
-
+      //rerender--update state. 
       this.setState({filteredSearch:filteredList})
     }
     else{
@@ -75,6 +84,7 @@ class Search extends Component {
     
   };
 
+  //Refresh button to keep repopulating the API users instead of having to hit the  refresh button on Browser
   handleFormSubmit = event => {
     event.preventDefault();
     API.searchEmployee()
@@ -88,11 +98,11 @@ class Search extends Component {
   }
 
 
-
+  //Starting Ascending Sorting for each cell. 
   sortList = (cell) => {
 
     let setList;
-
+    //Sort names
     if ((cell === "first") || (cell ==="last")) {
       if(this.state.sortType === "asc"){
         setList = this.state.filteredSearch.sort((a,b) => {
@@ -106,7 +116,7 @@ class Search extends Component {
       }
     }
 
-
+    //Sort email
     else if (cell === "email"){
       if(this.state.sortType === "asc"){
         setList = this.state.filteredSearch.sort((a,b) => {
@@ -120,7 +130,7 @@ class Search extends Component {
       }
     }
 
-
+    //Sort Location
     else if ((cell === "city") || (cell ==="country")){
       if(this.state.sortType === "asc"){
         setList = this.state.filteredSearch.sort((a,b) => {
@@ -135,7 +145,7 @@ class Search extends Component {
     }
 
 
-
+    //Sort Phones
     else if ((cell === "cell")||(cell ==="phone")){
       if(this.state.sortType === "asc"){
         setList = this.state.filteredSearch.sort((a,b) => {
@@ -149,6 +159,7 @@ class Search extends Component {
       }
     }
 
+    //Sort gender
     if (cell === "gender"){
       if(this.state.sortType === "asc"){
         setList = this.state.filteredSearch.sort((a,b) => {
@@ -162,6 +173,7 @@ class Search extends Component {
         })
       }
     }
+    //Rerender-- update state. 
     this.setState({filteredSearch: setList})
   }
 

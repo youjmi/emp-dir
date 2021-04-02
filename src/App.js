@@ -8,6 +8,7 @@ import Wrapper from "./components/Wrapper/index";
 
 function App() {
   return (
+    //ensure deployed link is routed immediately to home page//
     <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>
         <Navbar />
