@@ -12,7 +12,7 @@ function App() {
       <div>
         <Navbar />
         <Wrapper>
-        <Route exact path={process.env.PUBLIC_URL + '/emp-dir/'} component={Home} />
+        <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
         <Route exact path="/search" component={Search} />
         </Wrapper>
         <Footer />
