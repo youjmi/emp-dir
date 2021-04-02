@@ -30,7 +30,7 @@ function Home() {
               We hear you. 
               <br>
               </br>
-              Let us unite and let us help.
+              Let us help.
               </p>
               <p className ="text-center">
               Everyone affected by the pandemic can confidently say that the adaptation from working in an office, with ALL the resources, to working from home, with limited resources, has created alot of stress. 
